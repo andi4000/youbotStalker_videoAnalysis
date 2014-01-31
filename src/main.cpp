@@ -12,6 +12,13 @@ void getHSVThresholdedImg(const Mat& src, Mat& out, int h_lo, int h_hi, int s_lo
 	inRange(matHSV, Scalar(h_lo, s_lo, v_lo), Scalar(h_hi, s_hi, v_hi), out);
 }
 
+// develop this so we can get multiple blobs
+void doContourProcessingMultiple(){
+	
+}
+
+// this one only takes the biggest one and use it as the main object of interest
+// for this one, use different color, e.g.: robot green, user blue
 void doContourProcessing(const Mat& matSrc, const Mat& matThresh, Point& out_centroid, bool& out_gotIt, double& out_maxArea, Mat& out_mat)
 {
 	double minimalArea = 2000;
